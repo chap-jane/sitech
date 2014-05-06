@@ -1,20 +1,20 @@
 #!/bin/bash
-# describtion:猜字游戏
+# describtion:Guessing game
 # auther: -----
 
 rand=$(($RANDOM%100))
 n=1
-read -p "请输入一个0-99的数字：" num
+read -p "please input a number in 0-99：" num
 while true
 do
 	if [ $(($num)) -lt $(($rand)) ];then
-		echo "你输入的数字小了"
+		echo "your number is less"
 	elif [ $(($num)) -gt $(($rand)) ];then
-		echo "你输入的数字大了"
+		echo "your number is greater"
 	else 
-		echo "你第$n次猜中了 radmon=$rand"
+		echo "you have guessed the number :$rand"
 		break
 	fi
-	read -p "请重新输入一个0-99的数字：" num
+	read -p "please resume load a number in 0-99：" num
 	((n++))
 done
